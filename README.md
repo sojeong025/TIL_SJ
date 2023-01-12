@@ -1,4 +1,4 @@
-# 첫 Github
+# GitHub Intro
 
 ## read me 생성
 
@@ -9,3 +9,5 @@
 
 
 ## 새로운 수정 사항
+
+
