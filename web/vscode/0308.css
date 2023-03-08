@@ -1,0 +1,12 @@
+.box{
+  background-color: aquamarine;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+
+}
+.sticky{
+  position: sticky;
+  top: 20px;
+  background-color: orange;
+}
