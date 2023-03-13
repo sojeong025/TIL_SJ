@@ -26,8 +26,6 @@
   
   - 원하는 요소들을 Float로 지정하여 배치
 
-
-
 ## Flexbox
 
 > CSS Flexible Box Layout
@@ -35,8 +33,6 @@
 ![](TIL0309_CSS_Layout_assets/2023-03-09-10-10-46-image.png)
 
 ![](TIL0309_CSS_Layout_assets/2023-03-09-10-11-08-image.png)
-
-
 
 ![](TIL0309_CSS_Layout_assets/2023-03-09-10-12-16-image.png)
 
@@ -56,7 +52,7 @@
     
     - nowrap(기본 값) : 한 줄에 배치
     
-    - warp : 넘치면 그 다음 줄로 배치
+    - wrap : 넘치면 그 다음 줄로 배치
 
 - flex-flow
   
@@ -85,5 +81,3 @@ align-items: stretch; 기본값
 ![](TIL0309_CSS_Layout_assets/2023-03-09-10-40-50-image.png)
 
 ![](TIL0309_CSS_Layout_assets/2023-03-09-10-37-34-image.png)
-
-
