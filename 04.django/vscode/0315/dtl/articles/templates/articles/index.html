@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% comment %} extends는 무조건 첫번째줄에 아무런 주석도 달지 않기 {% endcomment %}
+
+{% block title %}
+  <title>INDEX</title>
+{% endblock title %}
+
+{% block content %}
+  <h1>INDEX PAGE</h1>
+  {% comment %} {% url 'app_name:url_name'%}{% endcomment %}
+  <a href="{% url 'articles:create' %}">CREATE</a>
+{% endblock content %}
