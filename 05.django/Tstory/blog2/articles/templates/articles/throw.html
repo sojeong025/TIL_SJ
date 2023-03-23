@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Throw</h1>
+
+  <!--method의 기본값은 GET-->
+  <form action="{% url 'articles:catch' %}" method="GET">
+    <label for="message">보내고 싶은 데이터 적기</label></br></br>
+    <input type="text" id="message" name="message">
+    <input type="submit">
+  </form>
+{% endblock content %}
