@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <img src="{% static 'musics/background.jpg' %}" style="width:500px" alt="background">
+  <h1>INDEX PAGE</h1>
+  <hr>
+  {% if request.user.is_authenticated %}
+    <a href="{% url 'musics:create' %}">CREATE</a>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">새 글을 작성하려면 로그인하세요</a>
+  {% endif %}
+  {% for music in musics %}
+    <p> 글 번호 : {{music.pk}}</p>
+    <a href="{% url 'musics:detail' music.pk %}">
+      <p> 가수 : {{music.singer}}</p>
+    </a>
+    <p> 타이틀 : {{music.title}}</p>
+    <hr>
+  {% endfor %}
+{% endblock content %}
