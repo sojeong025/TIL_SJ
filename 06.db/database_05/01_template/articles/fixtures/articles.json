@@ -1,0 +1,33 @@
+[
+{
+    "model": "articles.article",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "title": "진진 제목",
+        "content": "진진 내용",
+        "image": "",
+        "created_at": "2023-04-12T00:08:21.129Z",
+        "updated_at": "2023-04-12T00:08:21.129Z",
+        "like_users": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "articles.article",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "title": "소정 제목",
+        "content": "소정 내용",
+        "image": "",
+        "created_at": "2023-04-12T00:09:10.224Z",
+        "updated_at": "2023-04-12T00:09:10.224Z",
+        "like_users": [
+            1
+        ]
+    }
+}
+]

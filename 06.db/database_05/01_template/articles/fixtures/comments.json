@@ -1,0 +1,24 @@
+[
+{
+    "model": "articles.comment",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "article": 1,
+        "content": "집중해줘",
+        "created_at": "2023-04-12T00:08:32.894Z",
+        "updated_at": "2023-04-12T00:08:32.894Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "article": 2,
+        "content": "혼자 노는 것 같애",
+        "created_at": "2023-04-12T00:09:16.850Z",
+        "updated_at": "2023-04-12T00:09:16.850Z"
+    }
+}
+]
