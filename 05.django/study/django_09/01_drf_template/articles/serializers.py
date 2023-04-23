@@ -9,6 +9,11 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = '__all__'
         read_only_fields = ('article',)
 
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        rep.pop('article', None)
+        return rep
+
 class ArticleListSerializer(serializers.ModelSerializer):
     # comment_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     comment_set = CommentSerializer(many=True, read_only=True)
@@ -17,3 +22,9 @@ class ArticleListSerializer(serializers.ModelSerializer):
         model = Article
         # fields = ('id', 'title', 'content')
         fields = '__all__'
+
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        rep['comments'] = rep.pop('comment_set', [])
+        return rep
+
