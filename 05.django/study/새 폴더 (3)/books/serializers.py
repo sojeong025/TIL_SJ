@@ -36,7 +36,4 @@ class BookDetailSerializer(serializers.ModelSerializer):
         rep = super().to_representation(instance)
         rep['comments'] = rep.pop('comment_set', [])
         return rep
-    
-
-
 
