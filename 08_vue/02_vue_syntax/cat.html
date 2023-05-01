@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cat</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="getCat">고냥이 나와라</button>
+    <button @click="getDog">멍뭉 나와라</button>
+    <hr>
+    <!--src 속성은 단방향 바인딩 되었다. vue의 data에 들어있는 값과 연결되었다-->
+    <!--images{id:'id', url:'url'}객체들을 넣어놨으니-->
+    <!--image 각각은 각각의 객체들이 들어있다-->
+    <img v-for="image in images"
+    :key="image.id" 
+    :src="image.url" 
+    alt="" 
+    width="300px" 
+    height="300px">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data:{
+        url:'',
+        images: []
+      },
+      methods : {
+        getCat(){ 
+          axios ({
+          method : 'get',
+          url : 'https://api.thecatapi.com/v1/images/search',
+        })
+      .then(res => {
+        const { url, id } = res.data[0]
+        // vue가 관리할 모든 데이터는 vue의 data 객체에 저장한다
+        // this.url = url
+        const data = {
+          id,
+          url
+        }
+        this.images.push(data)
+        })
+      .catch(() =>{
+        alert('다시해')
+      })
+      },
+      getDog(){
+        axios({
+          method:'get',
+          url: 'https://api.thedogapi.com/v1/images/search',
+        })
+        .then(res => {
+          const { url, id } = res.data[0]
+
+          const data = {
+            id,
+            url
+          }
+          this.images.push(data)
+        })
+        .catch(err =>console.log)
+      }
+    }
+  })
+    
+  </script>
+</body>
+</html>
