@@ -18,8 +18,9 @@
 <body>
   <div id="app">
     <h1>박스 색상 바꾸기</h1>
-    <h3>색상 : </h3>
-    <div class="box">
+    <h3>색상 : {{ color }}</h3>
+    <div class="box" :style ="{ backgroundColor: color }" @click="changeColor" >
+    </div>
     </div>
   </div>
 
@@ -30,7 +31,14 @@
       el: '#app',
       data: {
         colors : ['red', 'orange', 'yellow', 'green', 'blue', 'violet'],
+        color : 'white'
       },
+      methods: {
+        changeColor() {
+          const randomIndex = _.random(0, this.colors.length - 1);
+          this.color = this.colors[randomIndex];
+        }
+      }
     })
   </script>
 </body>
