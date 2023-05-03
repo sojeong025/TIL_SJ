@@ -24,16 +24,26 @@
 <body>
   <div id="app">
     <h1>버튼을 골라주세요</h1>
-    <button @click>선택 1</button>
-    <button @click>선택 2</button>
+    <!--isSelected 변수를 초기값으로 null 설정-->
+    <!--버튼 클릭 시 clickSelected() 메서드를 호출 => selected의 값을 isSelected와 비교하고 같은 값이면 isSelected를 null로, 다른 값이면 isSelected를 selected로-->
+    <button :class="{selected: isSelected === 1}" @click="clickSelected(1)">선택 1</button>
+    <button :class="{selected: isSelected === 2}" @click="clickSelected(2)">선택 2</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
+        isSelected: null
       },
       methods: {
+        clickSelected(selected){
+          if(selected === this.isSelected){
+            this.isSelected = null;
+          } else {
+            this.isSelected = selected;
+          }
+        }
       }
     })
   </script>
