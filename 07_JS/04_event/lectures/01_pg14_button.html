@@ -15,13 +15,13 @@
   
   // ID가 btn인 요소를 선택
   const btn = document.querySelector('#btn')
+  const counter = document.querySelector('#counter')
 
   // btn이 클릭 되었을 때마다 함수가 실행됨
   btn.addEventListener('click', function(event){
     // console.log(event)
     console.log('버튼을 클릭했어요')
     counterNumber += 1
-    const counter = document.querySelector('#counter')
     counter.innerText = counterNumber
   })
 
