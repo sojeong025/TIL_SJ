@@ -1,5 +1,5 @@
 {
-  "name": "youtube",
+  "name": "login-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,6 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@vue/cli": "^5.0.8",
-    "axios": "^1.4.0",
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
   },
