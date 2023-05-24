@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 def crawl_cine21_news(page_limit):
     base_url = "http://www.cine21.com/news/issue/view/?mag_id="
     
-    start_id = 2400
-    end_id = 2400 - page_limit
+    start_id = 2402
+    end_id = 2402 - page_limit
     
     for mag_id in range(start_id, end_id, -1):
         url = base_url + str(mag_id)
